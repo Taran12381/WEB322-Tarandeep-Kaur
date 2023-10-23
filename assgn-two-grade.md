@@ -47,12 +47,12 @@
 | ------------------------------ | ------ | --- |
 | README                         |        |     |
 | - README provided              | 5      | 5   |
-| - Instructions for local setup | 5      | 5   |
+| - Instructions for local setup | 5      | 0   |
 
 ---
 
-## Total Score: [Total Score] / 100
+## Total Score: 95 / 100
 
 ### Comments:
 
-[Add comments and feedback here.]
+Excellent work! Would have been perfect but you missed the README instructions (doh). Otherwise very well done.
