@@ -3,11 +3,12 @@
     "id": 0,
     "firstName": "Mossie",
     "lastName": "Mosciski",
-    "email": "Nyah_OHara-Johns@gmail.com",
+    "email": "admin@gmail.com",
     "password": "upMyHwDHwjHJdIE",
     "dob": "2023-07-09T01:15:17.101Z",
     "company": "Murphy Inc",
-    "phone": "967-963-0570 x9136"
+    "phone": "967-963-0570 x9136",
+    "isAdmin": true
   },
   {
     "id": 1,
