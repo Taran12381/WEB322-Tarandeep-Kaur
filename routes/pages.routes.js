@@ -6,14 +6,15 @@ const pageRoutes = express.Router();
 const AuthenticationService = require("../services/authentication.service")
 
 pageRoutes.use(clientSessions({
-  cookieName: "session", 
-  secret: "WEB322",
-  duration: 2 * 60 * 1000, 
-  activeDuration: 1000 * 60 
-}));
+    cookieName: "loginSession", 
+    secret: "assignment2",
+    duration: 3 * 60 * 1000, 
+    activeDuration: 1000 * 60 
+  }
+  ));
   
   
-pageRoutes.get("/list", ensureLogin, (req, res) => {
+pageRoutes.get("/list", (req, res) => {
     res.render("list", { users });
   });
   
@@ -34,19 +35,13 @@ pageRoutes.get("/login", function(req, res) {
     res.render("login", { errorMsg: ""});
   });
   
-  function ensureLogin(req, res, next) {
-    if (!req.session.user) {
-      res.redirect("/login");
-    } else {
-      next();
-    }
-  }
+  
   
 pageRoutes.post('/login', (req, res) => {
   const { username, password } = req.body;
   const user = AuthenticationService.authenticate(username, password);
   if (user) {
-    req.session.user = {
+    req.loginSession.user = {
       username: user.email,
     };
     console.log({ isAuthenticated : true });
@@ -58,4 +53,13 @@ pageRoutes.post('/login', (req, res) => {
       }
   });
 
+  function ensureLogin(req, res, next) {
+    if (!req.session.user) {
+      res.redirect("/login");
+    } else {
+      next();
+    }
+  }
+
+  
 module.exports = pageRoutes; 
