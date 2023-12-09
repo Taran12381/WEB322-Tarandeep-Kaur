@@ -9,7 +9,7 @@ class UsersService {
 
   static async getUserByIdWithOrders(id) {
     try {
-      const user = await User.findByPk(id, { include: [Order] });
+      const user = await User.findByPk(id);
       if (!user) throw new Error("User not found");
       return user;
     } catch { throw new Error("Fetch failed"); }

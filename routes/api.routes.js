@@ -11,9 +11,9 @@ module.exports = () =>
     try {
       const users = await UserService.getAllUsers();
       res.json(users);
-    } catch (error) {
+    } catch (ER) {
       console.error("error: DOES NOT ABLE TO GET USERS!", ER);
-      res.status(500).json({ error: "Failed" });
+      res.status(500).json({ error: "DOES NOT ABLE TO GET USERS!" });
     }
   });
 
@@ -21,9 +21,9 @@ module.exports = () =>
     try {
       const newUser = await UserService.createUser(req.body);
       res.status(201).json(newUser);
-    } catch (error) {
+    } catch (ER) {
       console.error("error: DOES NOT ABLE TO ADD USER!", ER);
-      res.status(500).json({ error: "Failed" });
+      res.status(500).json({ error: "DOES NOT ABLE TO ADD USER!" });
     }
   });
 
@@ -34,9 +34,9 @@ module.exports = () =>
         return res.status(404).json({ error: "NO SUCH USER" });
       }
       res.json(user);
-    } catch (error) {
+    } catch (ER) {
       console.error("error: DOES NOT ABLE TO GET USER!", ER);
-      res.status(500).json({ error: "Failed" });
+      res.status(500).json({ error: "DOES NOT ABLE TO GET USER!" });
     }
   });
 
@@ -45,9 +45,9 @@ module.exports = () =>
     try {
       await UserService.deleteUserById(id);
       res.json({ success: true });
-    } catch (error) {
+    } catch (ER) {
       console.error("error: DOES NOT ABLE TO DELETE USER!", ER);
-      res.status(500).json({ error: "Failed" });
+      res.status(500).json({ error: "DOES NOT ABLE TO DELETE USER!" });
     }
   });
   
@@ -57,9 +57,9 @@ module.exports = () =>
     try {
       const updatedUser = await UserService.updateUser(id, userData);
       res.json(updatedUser);
-    } catch (error) {
+    } catch (ER) {
       console.error("error: DOES NOT ABLE TO UPDATE USER!", ER);
-      res.status(500).json({ error: "Failed" });
+      res.status(500).json({ error: "DOES NOT ABLE TO UPDATE USER!" });
     }
   });
 
@@ -67,9 +67,9 @@ module.exports = () =>
     try {
       const products = await ProductService.getAllProducts();
       res.json(products);
-    } catch (error) {
+    } catch (ER) {
       console.error("error: DOES NOT ABLE TO GET PRODUCTS!", ER);
-      res.status(500).json({ error: "Failed" });
+      res.status(500).json({ error: "DOES NOT ABLE TO GET PRODUCTS!" });
     }
   });
 
@@ -80,9 +80,9 @@ module.exports = () =>
         return res.status(404).json({ error: "NO SUCH PRODUCT" });
       }
       res.json(product);
-    } catch (error) {
+    } catch (ER) {
       console.error("error: DOES NOT ABLE TO GET PRODUCT!", ER);
-      res.status(500).json({ error: "Failed" });
+      res.status(500).json({ error: "DOES NOT ABLE TO GET PRODUCT!" });
     }
   });
 
@@ -91,9 +91,9 @@ module.exports = () =>
     try {
       await ProductService.deleteProductById(id);
       res.json({ success: true });
-    } catch (error) {
+    } catch (ER) {
       console.error("error: DOES NOT ABLE TO DELETE PRODUCT!", ER);
-      res.status(500).json({ error: "Failed" });
+      res.status(500).json({ error: "DOES NOT ABLE TO DELETE PRODUCT!" });
     }
   });
 
@@ -102,9 +102,9 @@ module.exports = () =>
     try {
       const newProduct = await ProductService.createProduct(newProductData);
       res.json(newProduct);
-    } catch (error) {
+    } catch (ER) {
       console.error("error: DOES NOT ABLE TO ADD PRODCT!", ER);
-      res.status(500).json({ error: "Failed" });
+      res.status(500).json({ error: "DOES NOT ABLE TO ADD PRODCT!" });
     }
   });
 
@@ -114,9 +114,9 @@ module.exports = () =>
     try {
       const updatedProduct = await ProductService.updateProduct(id, productData);
       res.json(updatedProduct);
-    } catch (error) {
+    } catch (ER) {
       console.error("error: DOES NOT ABLE TO UPDATE USER!", ER);
-      res.status(500).json({ error: "Failed" });
+      res.status(500).json({ error: "DOES NOT ABLE TO UPDATE USER!" });
     }
   });
 
@@ -126,7 +126,7 @@ module.exports = () =>
       res.json(orders);
     } catch (ER) {
       console.error("error: DOES NOT ABLE TO GET ORDERS!", ER);
-      res.status(500).json({ error: "Failed" });
+      res.status(500).json({ error: "DOES NOT ABLE TO GET ORDERS!" });
     }
   });
 
@@ -139,7 +139,7 @@ module.exports = () =>
       res.json(order);
     } catch (ER) {
       console.error("error: DOES NOT ABLE TO GET ORDERS!", ER);
-      res.status(500).json({ error: "Failed" });
+      res.status(500).json({ error: "DOES NOT ABLE TO GET ORDERS!" });
     }
   });
 
@@ -150,7 +150,7 @@ module.exports = () =>
       res.json(newOrder);
     } catch (ER) {
       console.error("error: DOES NOT ABLE TO ADD ORDER!", ER);
-      res.status(500).json({ error: "Failed" });
+      res.status(500).json({ error: "DOES NOT ABLE TO ADD ORDER!" });
     }
   });
 
@@ -162,7 +162,7 @@ module.exports = () =>
       res.json(updatedOrder);
     } catch (ER) {
       console.error("error: DOES NOT ABLE TO UPDATE ORDER!", ER);
-      res.status(500).json({ error: "Failed" });
+      res.status(500).json({ error: "DOES NOT ABLE TO UPDATE ORDER!" });
     }
   });
 
@@ -173,7 +173,7 @@ module.exports = () =>
       res.json({ success: true });
     } catch (ER) {
       console.error("error: DOES NOT ABLE TO DELETE ORDER!", ER);
-      res.status(500).json({ error: "Failed" });
+      res.status(500).json({ error: "DOES NOT ABLE TO DELETE ORDER!" });
     }
   });
 

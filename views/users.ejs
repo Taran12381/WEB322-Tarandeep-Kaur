@@ -1,0 +1,33 @@
+<br>
+<h1><b><u> LIST OF USERS </u></b></h1>
+<br>
+<hr>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (var i = 0; i < users.length; i++) { %>
+      <tr onclick="gotoDetail(<%= users[i].id %>)" style="cursor: pointer;">
+        <td><%= users[i].id %></td>
+        <td><%= users[i].firstName %></td>
+        <td><%= users[i].lastName %></td>
+        <td><%= users[i].email %></td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<script>
+  function gotoDetail(id) {
+    console.log(id);
+    window.location.href = `/users/${id}`
+  }
+</script>
+
+
