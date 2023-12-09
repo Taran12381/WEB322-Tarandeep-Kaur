@@ -1,0 +1,33 @@
+<br>
+<h1><b><u> LIST OF PRODUCTS </u></b></h1>
+<br>
+<hr>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">ISBN</th>
+      <th scope="col">PRICE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (var i = 0; i < products.length; i++) { %>
+      <tr onclick="gotoDetail(<%= products[i].id %>)" style="cursor: pointer;">
+        <td><%= products[i].id %></td>
+        <td><%= products[i].name %></td>
+        <td><%= products[i].isbn %></td>
+        <td><%= products[i].price %></td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<script>
+  function gotoDetail(id) {
+    console.log(id);
+    window.location.href = `/products/${id}`
+  }
+</script>
+
+

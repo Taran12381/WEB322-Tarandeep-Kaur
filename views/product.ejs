@@ -1,0 +1,18 @@
+<head>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+  
+<h2><b><u> DETAIL OF PRODUCT <%= product.id %></u></b></h2>
+<br>
+<div>
+    <ul>
+        <li><b>ID:</b> <%= product.id %></li>
+        <li><b>Name:</b> <%= product.name %></li>
+        <li><b>ISBN:</b> <%= product.isbn %></li>
+        <li><b>Price:</b> <%= product.price %></li>
+        <li><b>Description:</b> <%= product.description %></li>
+        <li><b>Created At:</b> <%= product.createdAt %></li>
+        <li><b>Updated At:</b> <%= product.updatedAt %></li>
+      </ul>      
+    <button class="btn btn-primary" onclick="history.back()">Back</button>
+</div>
